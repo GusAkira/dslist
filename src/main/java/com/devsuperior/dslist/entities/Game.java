@@ -5,6 +5,7 @@ import java.util.Objects;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,7 +14,7 @@ import jakarta.persistence.Table;
 public class Game {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	
@@ -23,8 +24,12 @@ public class Game {
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
-	private String longDescriString;
+	
+	@Column(columnDefinition = "TEXT")
+	private String longDescription;
 
 
 	public Game() {
@@ -33,7 +38,7 @@ public class Game {
 
 
 	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
-			String shortDescription, String longDescriString) {
+			String shortDescription, String longDescription) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -43,7 +48,7 @@ public class Game {
 		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
-		this.longDescriString = longDescriString;
+		this.longDescription = longDescription;
 	}
 
 
@@ -128,12 +133,12 @@ public class Game {
 
 
 	public String getLongDescriString() {
-		return longDescriString;
+		return longDescription;
 	}
 
 
-	public void setLongDescriString(String longDescriString) {
-		this.longDescriString = longDescriString;
+	public void setLongDescriString(String longDescription) {
+		this.longDescription = longDescription;
 	}
 
 
