@@ -26,7 +26,7 @@ Arquitetura e Boas Práticas:
 - Facilidade de testes e deploy em diferentes ambientes com consistência
   
 Destaques Técnicos:
-- Criação de APIs RESTful robustas e escaláveis
+- Criação de APIs RESTfull robusta e escalável
 - Validação de dados e tratamento de exceções
 - Testes com banco H2 para simulação de ambiente
 - Integração com PostgreSQL para persistência real
